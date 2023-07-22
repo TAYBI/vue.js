@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="./vue.global.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <img :src="imgSrc" alt="">
+
+        <h1>{{ title }}</h1>
+        <p>{{ welcomeMessage() }}</p>
+
+        {{htmlCode}}
+
+        <div v-html="htmlCode"></div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
