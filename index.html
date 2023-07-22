@@ -10,16 +10,14 @@
 </head>
 
 <body>
+    <h2>Counter app</h2>
     <div id="app">
-        <img :src="imgSrc" alt="">
-
-        <h1>{{ title }}</h1>
-        <p>{{ welcomeMessage() }}</p>
-
-        {{htmlCode}}
-
-        <div v-html="htmlCode"></div>
-
+        <h3>{{ counter }}</h3>
+        <button @click="incCounter()">+</button> <span> </span>
+        <button @click="DecCounter()"> <b>-</b></button>
+        <hr>
+        <button @click="incCounter(5)">+</button> <span> </span>
+        <button @click="DecCounter(5)"> <b>-</b></button>
     </div>
     <script src="app.js"></script>
 </body>
