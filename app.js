@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            name: '',
             counter: 0
         }
     },
@@ -10,6 +11,9 @@ const app = Vue.createApp({
         },
         DecCounter(step = 1) {
             this.counter -= step;
+        },
+        logName() {
+            console.log(this.name);
         },
     }
 })

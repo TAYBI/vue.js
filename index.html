@@ -10,11 +10,20 @@
 </head>
 
 <body>
-    <h2>Counter app</h2>
+
+
     <div id="app">
+        <h2>Input manupaliation, eVents, V-modal</h2>
+        <input @keyup.ctrl.enter="logName" v-model="name" type="text" name="" id="">
+        <p>{{ name }}</p>
+
+        <hr>
+        <h2>Counter app</h2>
+        <hr>
+        <hr>
         <h3>{{ counter }}</h3>
         <button @click="incCounter()">+</button> <span> </span>
-        <button @click="DecCounter()"> <b>-</b></button>
+        <button @click.once="DecCounter()"> <b>-</b></button>
         <hr>
         <button @click="incCounter(5)">+</button> <span> </span>
         <button @click="DecCounter(5)"> <b>-</b></button>
