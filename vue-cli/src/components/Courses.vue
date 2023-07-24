@@ -21,6 +21,18 @@
             </div>
         </div>
     </div>
+
+    <teleport v-if="deleted" to='#alert'>
+        <div class="container alert alert-danger text-center">
+            <strong>Couse deleted !</strong>
+        </div>
+    </teleport>
+
+    <teleport v-if="added" to='#alert'>
+        <div class="container alert alert-success text-center">
+            <strong>Couse addded !</strong>
+        </div>
+    </teleport>
 </template>
 
 <script>
@@ -41,6 +53,8 @@ export default {
         return {
             hide: true,
             displayAdd: false,
+            deleted: false,
+            added: false,
             courses: [
                 {
                     name: "Web Development Bootcamp",
@@ -65,7 +79,7 @@ export default {
                 {
                     name: "Graphic Design Essentials",
                     description: "Learn the fundamentals of graphic design and unleash your creativity.",
-                    imageLink: "https://source.unsplash.com/random/200x100?sig=4"
+                    imageLink: "https://source.unsplash.com/random/200x100?sig=5"
                 },
             ]
         }
@@ -74,12 +88,21 @@ export default {
     methods: {
         deleteCourse(id) {
             this.courses.splice(id, 1);
+            this.deleted = true;
+            setTimeout(() => {
+                this.deleted = false
+            }, 1000);
         },
         addCourse(course) {
             const course_ = { ...course, imageLink: `https://source.unsplash.com/random/200x100?sig=${this.courses.length + 1}` }
 
             this.courses.unshift(course_);
             this.displayAdd = false;
+
+            this.added = true;
+            setTimeout(() => {
+                this.added = false
+            }, 1000);
         },
         toggle() {
             this.displayAdd = !this.displayAdd;

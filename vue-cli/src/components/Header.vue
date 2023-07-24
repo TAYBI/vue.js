@@ -1,5 +1,5 @@
 <template lang="en">
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand px-3" href="#">Vue corce</a>
     <button
       class="navbar-toggler"
@@ -33,7 +33,7 @@
 </template>
 <script>
 export default {
-    name: 'AppHeader',
+  name: 'AppHeader',
 
 }
 </script>
