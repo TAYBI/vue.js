@@ -1,4 +1,13 @@
 <template>
+    <nav aria-label="breadcrumb">
+        <div class="px-4 d-flex justify-content-between align-items-center">
+            <slot></slot>
+
+            <slot name="btn-right"></slot>
+        </div>
+
+
+    </nav>
     <div class="container mt-4">
         <div class="row">
             <div v-for="(course, index) in courses" :key="index" class="col-md-4 mb-4">

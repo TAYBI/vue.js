@@ -4,7 +4,15 @@
     <AppHeader />
     <img alt="Vue logo" src="./assets/logo.png">
     <AddCources />
-    <CoursesList />
+    <CoursesList>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Library</li>
+      </ol>
+      <template v-slot:btn-right>
+        <button class="btn btn-sm btn-success">New</button>
+      </template>
+    </CoursesList>
   </div>
 
   <AppFooter />
