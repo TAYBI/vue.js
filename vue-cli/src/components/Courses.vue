@@ -1,4 +1,6 @@
 <template>
+    <AddCources @addCourse="addCourse($event)" />
+
     <nav aria-label="breadcrumb">
         <div class="px-4 d-flex justify-content-between align-items-center">
             <slot></slot>
@@ -18,16 +20,17 @@
 </template>
 
 <script>
+
+import AddCources from "./AddCources";
 import OneCourse from './Course.vue';
-
-
 
 
 export default {
     name: 'CourcesList',
 
     components: {
-        OneCourse
+        AddCources,
+        OneCourse,
     },
 
     data() {
@@ -65,6 +68,12 @@ export default {
     methods: {
         deleteCourse(id) {
             this.courses.splice(id, 1);
+        },
+        addCourse(course) {
+            const course_ = { ...course, imageLink: `https://source.unsplash.com/random/200x100?sig=${this.courses.length + 1}` }
+
+            console.log(course_);
+            this.courses.unshift(course_);
         }
     }
 }

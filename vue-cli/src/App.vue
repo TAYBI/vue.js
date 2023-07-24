@@ -3,7 +3,6 @@
 
     <AppHeader />
     <img alt="Vue logo" src="./assets/logo.png">
-    <AddCources />
     <CoursesList>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -22,7 +21,6 @@
 
 import AppHeader from "./components/Header";
 import CoursesList from "./components/Courses";
-import AddCources from "./components/AddCources";
 import AppFooter from "./components/Footer";
 
 export default {
@@ -31,7 +29,6 @@ export default {
   components: {
     AppHeader,
     CoursesList,
-    AddCources,
     AppFooter
   },
 }
