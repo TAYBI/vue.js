@@ -23,19 +23,34 @@
         <h2>Input manupaliation, eVents, V-modal</h2>
         <input @keyup.ctrl.enter="logName" v-model="name" type="text" name="" id="">
         <p>{{ name }}</p> -->
-        <h2>Counter app</h2>
-        <hr>
-        <h3>{{ counter }}</h3>
-        <button class="btn btn-primary" @click="incCounter()">+</button> <span> </span>
-        <!-- <button class="btn btn-primary" @click.once="DecCounter()"> <b>-</b></button> -->
-        <button class="btn btn-primary" @click="DecCounter()"> <b>-</b></button>
-        <hr>
-        <button class="btn btn-primary" @click="incCounter(5)">+</button> <span> </span>
-        <button class="btn btn-primary" @click="DecCounter(5)"> <b>-</b></button>
-        <hr>
-        <h4>
-            <span :class="['badge', classObject]">{{message}}</span>
-        </h4>
+        <button class="btn btn-dark" @click="toggle = !toggle">toggle</button>
+        <div class="dark" v-if="toggle">
+            <h2>Counter app</h2>
+            <hr>
+            <h3>{{ counter }}</h3>
+            <button class="btn btn-primary" @click="incCounter()">+</button> <span> </span>
+            <!-- <button class="btn btn-primary" @click.once="DecCounter()"> <b>-</b></button> -->
+            <button class="btn btn-primary" @click="DecCounter()"> <b>-</b></button>
+            <hr>
+            <button class="btn btn-primary" @click="incCounter(5)">+</button> <span> </span>
+            <button class="btn btn-primary" @click="DecCounter(5)"> <b>-</b></button>
+            <hr>
+            <h4>
+                <span :class="['badge', classObject]">{{message}}</span>
+            </h4>
+        </div>
+        <div v-else>Show all</div>
+
+        <ul class="list-group">
+            <span class="list-group-item list-group-item-action active">
+                List of Clients
+            </span>
+            <li v-for="(client, index) in clients"
+                class="list-group-item d-flex justify-content-between align-items-center">
+                {{client.name}} - {{ client.email }}
+                <span>{{client.age}}</span>
+            </li>
+        </ul>
     </div>
     <script src="app.js"></script>
 </body>

@@ -6,6 +6,27 @@ const app = Vue.createApp({
             initValue: 0,
             message: '',
             result: false,
+            toggle: false,
+            clients: [
+                {
+                    name: "John Doe",
+                    age: 30,
+                    email: "john@example.com",
+                    phone: "555-1234"
+                },
+                {
+                    name: "Jane Smith",
+                    age: 25,
+                    email: "jane@example.com",
+                    phone: "555-5678"
+                },
+                {
+                    name: "Bob Johnson",
+                    age: 40,
+                    email: "bob@example.com",
+                    phone: "555-9876"
+                },
+            ]
         }
     },
     methods: {
