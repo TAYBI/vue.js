@@ -1,11 +1,15 @@
 <template>
-    <AddCources @addCourse="addCourse($event)" />
+    <AddCources v-if="displayAdd" @addCourse="addCourse($event)" />
 
     <nav aria-label="breadcrumb">
         <div class="px-4 d-flex justify-content-between align-items-center">
-            <slot></slot>
-
-            <slot name="btn-right"></slot>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+            <button @click="toggle" :class="['btn', 'btn-sm', !displayAdd ? 'btn-success' : 'btn-dark']">{{ !displayAdd ?
+                'New'
+                : 'Close' }}</button>
         </div>
 
 
@@ -35,6 +39,8 @@ export default {
 
     data() {
         return {
+            hide: true,
+            displayAdd: false,
             courses: [
                 {
                     name: "Web Development Bootcamp",
@@ -72,8 +78,11 @@ export default {
         addCourse(course) {
             const course_ = { ...course, imageLink: `https://source.unsplash.com/random/200x100?sig=${this.courses.length + 1}` }
 
-            console.log(course_);
             this.courses.unshift(course_);
+            this.displayAdd = false;
+        },
+        toggle() {
+            this.displayAdd = !this.displayAdd;
         }
     }
 }

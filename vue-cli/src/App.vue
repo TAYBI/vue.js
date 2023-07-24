@@ -2,15 +2,8 @@
   <div class="container">
 
     <AppHeader />
-    <img alt="Vue logo" src="./assets/logo.png">
+    <br>
     <CoursesList>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Library</li>
-      </ol>
-      <template v-slot:btn-right>
-        <button class="btn btn-sm btn-success">New</button>
-      </template>
     </CoursesList>
   </div>
 
@@ -31,6 +24,16 @@ export default {
     CoursesList,
     AppFooter
   },
+
+  data() {
+    return {
+      displayAdd: false,
+    }
+  },
+
+  methods: {
+
+  }
 }
 </script>
 
