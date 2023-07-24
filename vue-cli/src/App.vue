@@ -6,6 +6,8 @@
     <AddCources />
     <CourcesList />
   </div>
+
+  <AppFooter />
 </template>
 
 <script>
@@ -13,6 +15,7 @@
 import AppHeader from "./components/Header";
 import CourcesList from "./components/Cources";
 import AddCources from "./components/AddCources";
+import AppFooter from "./components/Footer";
 
 export default {
   name: 'App',
@@ -21,6 +24,7 @@ export default {
     AppHeader,
     CourcesList,
     AddCources,
+    AppFooter
   },
 }
 </script>

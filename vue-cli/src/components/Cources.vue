@@ -2,21 +2,25 @@
     <div class="container mt-4">
         <div class="row">
             <div v-for="(course, index) in courses" :key="index" class="col-md-4 mb-4">
-                <div class="card">
-                    <img :src="`${course.imageLink}${index}`" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ course.name }}</h5>
-                        <p class="card-text">{{ course.description }}</p>
-                    </div>
-                </div>
+                <OneCourse :course="course" :index="index" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import OneCourse from './Course.vue';
+
+
+
+
 export default {
     name: 'CourcesList',
+
+    components: {
+        OneCourse
+    },
+
     data() {
         return {
             courses: [
