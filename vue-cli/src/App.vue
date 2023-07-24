@@ -4,7 +4,7 @@
     <AppHeader />
     <img alt="Vue logo" src="./assets/logo.png">
     <AddCources />
-    <CourcesList />
+    <CoursesList />
   </div>
 
   <AppFooter />
@@ -13,7 +13,7 @@
 <script>
 
 import AppHeader from "./components/Header";
-import CourcesList from "./components/Cources";
+import CoursesList from "./components/Courses";
 import AddCources from "./components/AddCources";
 import AppFooter from "./components/Footer";
 
@@ -22,7 +22,7 @@ export default {
 
   components: {
     AppHeader,
-    CourcesList,
+    CoursesList,
     AddCources,
     AppFooter
   },
