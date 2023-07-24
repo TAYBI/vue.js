@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <h1>{{ message }}</h1>
-  <input class="form-control" type="text" ref="input">
-  <button class="btn btn-dark" @click="setFocus">set Focus</button>
+  <div class="container">
+
+    <AppHeader />
+    <img alt="Vue logo" src="./assets/logo.png">
+    <AddCources />
+    <CourcesList />
+  </div>
 </template>
 
 <script>
 
+import AppHeader from "./components/Header";
+import CourcesList from "./components/Cources";
+import AddCources from "./components/AddCources";
+
 export default {
   name: 'App',
 
-  data() {
-    return {
-      message: "Vue CLI app"
-    }
+  components: {
+    AppHeader,
+    CourcesList,
+    AddCources,
   },
-
-  methods: {
-    setFocus() {
-      this.$refs.input.focus();
-    }
-  }
 }
 </script>
 
@@ -31,6 +32,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
