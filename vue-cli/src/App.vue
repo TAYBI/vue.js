@@ -1,15 +1,25 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>{{ message }}</h1>
+  <input class="form-control" type="text" ref="input">
+  <button class="btn btn-dark" @click="setFocus">set Focus</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+
+  data() {
+    return {
+      message: "Vue CLI app"
+    }
+  },
+
+  methods: {
+    setFocus() {
+      this.$refs.input.focus();
+    }
   }
 }
 </script>
