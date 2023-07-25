@@ -20,19 +20,12 @@
             </div>
         </div>
     </div>
-    <div v-else-if="blog == null" class="">
-        <PageNotFound />
-    </div>
     <div v-else class="h3">Loading..</div>
 </template>
 <script>
-import PageNotFound from '../PageNotFound.vue';
 
 export default {
     props: ['id', 'slug'],
-    components: {
-        PageNotFound
-    },
     data() {
         return {
             blog: null

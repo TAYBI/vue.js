@@ -24,12 +24,13 @@ export default {
 </script>
 <style>
 .router-link-active {
-  text-decoration: underline !important;
-  font-weight: 800 !important;
+  font-weight: bolder !important;
+  color: #41d7a7 !important;
 }
 
 .navbar-brand {
   text-decoration: none !important;
   font-weight: normal !important;
+  color: white !important;
 }
 </style>
