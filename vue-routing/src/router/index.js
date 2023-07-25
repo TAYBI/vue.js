@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import BlogView from '@/views/blog/BlogView.vue'
-import 'bootswatch/dist/sketchy/bootstrap.min.css';
+import BlogDetails from '@/views/blog/BlogDetails.vue'
+import 'bootswatch/dist/quartz/bootstrap.min.css';
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: '/blog',
     name: 'blog',
     component: BlogView
+  },
+  {
+    path: '/blog/:id/:slug',
+    name: 'BlogDetails',
+    component: BlogDetails
   }
 ]
 

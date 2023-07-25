@@ -1,5 +1,5 @@
 <template lang="">
-<nav class="navbar  bg-primary mx-2" data-bs-theme="dark">
+<nav class="navbar  bg-primary my-2 mb-3" data-bs-theme="dark">
   <div class="d-flex flex-row">
     <router-link class="navbar-brand px-3" to="/">Home</router-link>
       <ul class="navbar-nav me-auto d-flex flex-row">
