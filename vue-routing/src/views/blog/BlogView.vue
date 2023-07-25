@@ -49,6 +49,10 @@ export default {
   text-align: left !important;
 }
 
+img {
+  border-radius: 10px;
+}
+
 .badge {
   margin: 3px;
 }
