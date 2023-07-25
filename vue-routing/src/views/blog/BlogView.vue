@@ -1,8 +1,8 @@
 <template lang="">
+  <center> 
   <div class="row d-flex ">
-    <center>
       <div v-for="blog in blogs" class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <div class="card border-secondary mb-3" style="max-width: 22rem;">
+          <div class="card border-info mb-3" style="max-width: 22rem;">
               <div class="card-header">
               <router-link :to="{name: 'BlogDetails', params: { id: blog.id, slug: blog.slug}}">{{blog.name}}</router-link>  
               </div>
@@ -12,8 +12,8 @@
               </div>
           </div>
       </div>
-    </center>
-  </div>
+    </div>
+  </center>
 </template>
 <script>
 export default {
@@ -70,3 +70,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.card {
+  text-align: left !important;
+}
+</style>

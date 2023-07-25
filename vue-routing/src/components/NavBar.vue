@@ -22,6 +22,14 @@ export default {
 
 }
 </script>
-<style lang="">
-    
+<style>
+.navbar-brand {
+  text-decoration: none !important;
+  font-weight: normal !important;
+}
+
+.router-link-active {
+  text-decoration: underline;
+  font-weight: 800;
+}
 </style>
