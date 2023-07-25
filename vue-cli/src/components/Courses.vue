@@ -52,7 +52,7 @@ export default {
     data() {
         return {
             hide: true,
-            displayAdd: false,
+            displayAdd: true,
             deleted: false,
             added: false,
             courses: [
