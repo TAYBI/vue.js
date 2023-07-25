@@ -23,7 +23,7 @@ const routes = [
     component: BlogView
   },
   {
-    path: '/blog/:id/:slug',
+    path: '/blog/:id',
     name: 'BlogDetails',
     component: BlogDetails,
     props: true
