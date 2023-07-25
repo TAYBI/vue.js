@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import BlogView from '@/views/blog/BlogView.vue'
-import 'bootswatch/dist/minty/bootstrap.min.css';
+import 'bootswatch/dist/sketchy/bootstrap.min.css';
 
 const routes = [
   {
