@@ -1,35 +1,38 @@
 <template >
     <div v-if="blog" class="jumbotron alert alert-secondary">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 mb-2">
                 <h1 class="display-4" style="font-weight: bold;">{{ blog.strMeal }}</h1>
                 <img class="img-fluid mb-3" style="max-height: 300px; height: auto; width: 100%;" :src="blog.strMealThumb"
                     alt="Card image cap">
-                <p class="lead">{{ blog.strInstructions }}</p>
+                <div class="d-flex">
+                    <span class="badge bg-dark ">{{ blog.strArea }}</span>
+                    <span class="badge bg-danger ">{{ blog.strTags }}</span>
+                    <span class="badge bg-warning ">{{ blog.strCategory }}</span>
+                </div>
             </div>
             <div class="col-12 col-md-6">
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <span class="badge bg-dark">{{ blog.strArea }}</span>
-                    </div>
-                    <div class="col-4">
-                        <span class="badge bg-danger">{{ blog.strTags }}</span>
-                    </div>
-                    <div class="col-4">
-                        <span class="badge bg-warning">{{ blog.strCategory }}</span>
-                    </div>
-                </div>
                 <hr class="my-4">
+                <p class="lead">{{ blog.strInstructions }}</p>
                 <p class="lead">
                     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                 </p>
             </div>
         </div>
     </div>
+    <div v-else-if="blog == null" class="">
+        <PageNotFound />
+    </div>
+    <div v-else class="h3">Loading..</div>
 </template>
 <script>
+import PageNotFound from '../PageNotFound.vue';
+
 export default {
     props: ['id', 'slug'],
+    components: {
+        PageNotFound
+    },
     data() {
         return {
             blog: null

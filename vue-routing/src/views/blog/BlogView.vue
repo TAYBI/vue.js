@@ -1,21 +1,28 @@
 <template lang="">
   <center> 
-  <div class="row d-flex ">
+  <div v-if="blogs.length > 0" class="row d-flex ">
       <div v-for="blog in blogs" class="col-lg-3 col-md-4 col-sm-6 col-12">
-          <div class="card border-info mb-3" style="max-width: 22rem;">
-            <div class="card-header">
+          <div class="card alert  alert-secondary mb-3" style="max-width: 22rem;">
+            <div class="h4">
               {{blog.strMeal}}  
             </div>
             <img class="card-img-top" :src="blog.strMealThumb" alt="Card image cap">
-              <div class="card-body">                
-                <span class="badge bg-dark ">{{blog.strArea}}</span>
-                <span class="badge bg-danger ">{{blog.strTags}}</span>
-                <span class="badge bg-warning ">{{blog.strCategory}}</span>
-              </div>
-              <router-link :to="{name: 'BlogDetails', params: { id: blog.idMeal }}" class="btn btn-secondary">More details</router-link>
+            <div class="my-1 mt-3">                
+              <span class="badge bg-dark ">{{blog.strArea}}</span>
+              <span class="badge bg-danger ">{{blog.strTags}}</span>
+              <span class="badge bg-warning ">{{blog.strCategory}}</span>
+            </div>
+            <hr class="mt-2"/>
+            <router-link :to="{name: 'BlogDetails', params: { id: blog.idMeal }}" class="btn btn-primary">
+                <strong>
+                  More details
+                </strong>
+            </router-link>
+
           </div>
       </div>
-    </div>
+  </div>
+  <div v-else class="h3">Loading...</div>
   </center>
 </template>
 <script>

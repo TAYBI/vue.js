@@ -4,7 +4,7 @@ import AboutView from '@/views/AboutView.vue'
 import BlogView from '@/views/blog/BlogView.vue'
 import BlogDetails from '@/views/blog/BlogDetails.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
-import 'bootswatch/dist/quartz/bootstrap.min.css';
+import 'bootswatch/dist/sketchy/bootstrap.min.css';
 
 const routes = [
   {
