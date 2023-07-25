@@ -1,17 +1,17 @@
 <template >
     <div v-if="blog" class="jumbotron alert alert-secondary">
         <div class="row">
-            <div class="col-12 col-md-6 mb-2">
-                <h1 class="display-4" style="font-weight: bold;">{{ blog.strMeal }}</h1>
-                <img class="img-fluid mb-3" style="max-height: 300px; height: auto; width: 100%;" :src="blog.strMealThumb"
-                    alt="Card image cap">
-                <div class="d-flex">
-                    <span class="badge bg-dark ">{{ blog.strArea }}</span>
-                    <span class="badge bg-danger ">{{ blog.strTags }}</span>
-                    <span class="badge bg-warning ">{{ blog.strCategory }}</span>
-                </div>
-            </div>
             <div class="col-12 col-md-6">
+                <h1 class="display-4 px-3" style="font-weight: bold;">{{ blog.strMeal }}</h1>
+                <img class="img-fluid mb-3" style="height: auto; width: 100%;" :src="blog.strMealThumb"
+                    alt="Card image cap">
+            </div>
+            <div class="col-12 col-md-6 mt-2">
+                <div class="d-flex mt-2">
+                    <span class="badge bg-dark mx-1">{{ blog.strArea }}</span>
+                    <span class="badge bg-danger mx-1">{{ blog.strTags }}</span>
+                    <span class="badge bg-warning mx-1">{{ blog.strCategory }}</span>
+                </div>
                 <hr class="my-4">
                 <p class="lead">{{ blog.strInstructions }}</p>
                 <p class="lead">
@@ -20,19 +20,12 @@
             </div>
         </div>
     </div>
-    <div v-else-if="blog == null" class="">
-        <PageNotFound />
-    </div>
     <div v-else class="h3">Loading..</div>
 </template>
 <script>
-import PageNotFound from '../PageNotFound.vue';
 
 export default {
     props: ['id', 'slug'],
-    components: {
-        PageNotFound
-    },
     data() {
         return {
             blog: null
