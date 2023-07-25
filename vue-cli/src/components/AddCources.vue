@@ -55,7 +55,7 @@ export default {
         return {
             nom: '',
             description: '',
-            selectedCategory: 3, // Set the default selected category to 'Mobile' (id: 3)
+            selectedCategory: 3,
             categories: [
                 { id: 1, name: 'FrontEnd' },
                 { id: 2, name: 'BackEnd' },
@@ -68,7 +68,18 @@ export default {
     },
     methods: {
         addCourse() {
-            this.$emit('addCourse', { name: this.nom, description: this.description, category: this.selectedCategory });
+            let selectedCategoryObject = this.categories.find(category => category.id === this.selectedCategory);
+
+            let formValues = {
+                name: this.nom,
+                description: this.description,
+                category: selectedCategoryObject.name,
+                typePayment: this.typePayment,
+                tags: this.tagsChecked
+            }
+
+            console.log(formValues);
+            this.$emit('addCourse', formValues);
         },
     },
 };

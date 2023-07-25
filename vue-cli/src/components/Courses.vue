@@ -59,27 +59,42 @@ export default {
                 {
                     name: "Web Development Bootcamp",
                     description: "Learn web development from scratch and build powerful applications.",
-                    imageLink: "https://source.unsplash.com/random/200x100?sig=1"
+                    imageLink: "https://source.unsplash.com/random/200x100?sig=1",
+                    category: 'FrontEnd',
+                    typePayment: 'free',
+                    tags: ['backend', 'js', 'git']
                 },
                 {
                     name: "Data Science Fundamentals",
                     description: "Discover the world of data science and learn to analyze data effectively.",
-                    imageLink: "https://source.unsplash.com/random/200x100?sig=2"
+                    imageLink: "https://source.unsplash.com/random/200x100?sig=2",
+                    category: 'BackEnd',
+                    typePayment: 'paying',
+                    tags: ['data science', 'python', 'machine learning']
                 },
                 {
                     name: "Digital Marketing Mastery",
                     description: "Master the art of digital marketing and grow your online presence.",
-                    imageLink: "https://source.unsplash.com/random/200x100?sig=3"
+                    imageLink: "https://source.unsplash.com/random/200x100?sig=3",
+                    category: 'Marketing',
+                    typePayment: 'free',
+                    tags: ['digital marketing', 'social media', 'SEO']
                 },
                 {
                     name: "Mobile App Development",
                     description: "Create stunning mobile apps for Android and iOS platforms.",
-                    imageLink: "https://source.unsplash.com/random/200x100?sig=4"
+                    imageLink: "https://source.unsplash.com/random/200x100?sig=4",
+                    category: 'Mobile',
+                    typePayment: 'paying',
+                    tags: ['mobile development', 'Android', 'iOS']
                 },
                 {
                     name: "Graphic Design Essentials",
                     description: "Learn the fundamentals of graphic design and unleash your creativity.",
-                    imageLink: "https://source.unsplash.com/random/200x100?sig=5"
+                    imageLink: "https://source.unsplash.com/random/200x100?sig=5",
+                    category: 'Design',
+                    typePayment: 'free',
+                    tags: ['graphic design', 'art', 'creativity']
                 },
             ]
         }
