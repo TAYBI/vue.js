@@ -18,6 +18,11 @@ const routes = [
     path: '/courses',
     name: 'courses',
     component: CoursesVue
+  },
+  {
+    path: '/courses/:id',
+    name: 'course',
+    component: CoursesVue
   }
 ]
 
