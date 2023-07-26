@@ -1,4 +1,7 @@
 <template >
+    <v-container v-if="error">
+        <v-alert type="error" variant="outlined" :text="error"></v-alert>
+    </v-container>
     <v-parallax :src="course.imageLink">
         <div class="d-flex flex-column fill-height justify-center align-center text-white">
             <h1 class="text-h4 font-weight-thin mb-4">
@@ -22,7 +25,7 @@ export default {
         const { course, load, error } = getCourse();
 
         console.log(load(id));
-        return { course }
+        return { course, error }
     }
 }
 </script>

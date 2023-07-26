@@ -1,28 +1,56 @@
 <template >
-    <v-dialog transition="dialog-bottom-transition" width="auto">
-        <template v-slot:activator="{ props }">
-            <v-btn color="primary" v-bind="props">From the bottom</v-btn>
-        </template>
-        <template v-slot:default="{ isActive }">
-            <v-card>
-                <v-card-text style="min-width: 300px;">
-                    <v-form @submit.prevent>
-                        <v-text-field v-model="firstName" label="First name" :rules="firstNameRules"></v-text-field>
-
-                        <v-text-field v-model="lastName" label="Last name" :rules="lastNameRules"></v-text-field> <v-btn
-                            type="submit" block class="mt-2">Submit</v-btn>
-                    </v-form>
-                </v-card-text>
-                <v-card-actions class="justify-end">
-                    <v-btn variant="text" @click="isActive.value = false">Close</v-btn>
-                </v-card-actions>
-            </v-card>
-        </template>
-    </v-dialog>
+    <v-card>
+        <v-card-title>
+            <span class="text-h5">Course Details</span>
+        </v-card-title>
+        <v-card-text>
+            <v-container>
+                <v-row>
+                    <v-col cols="12" sm="6" md="4">
+                        <v-text-field label="Title*" required></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                        <v-text-field label="Category*" required></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="12" md="4">
+                        <v-textarea label="Description"></v-textarea>
+                    </v-col>
+                    <v-col cols="12" sm="6">
+                        <v-autocomplete :items="[
+                            'Python',
+                            'JavaScript',
+                            'Java',
+                            'Cplusplus',
+                            'HTML',
+                            'CSS',
+                            'Ruby',
+                            'PHP',
+                            'Swift',
+                            'SQL']" label="Interests" multiple></v-autocomplete>
+                    </v-col>
+                </v-row>
+            </v-container>
+            <small>*indicates required field</small>
+        </v-card-text>
+        <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue-darken-1" variant="text" @click="closeDialog">
+                Close
+            </v-btn>
+            <v-btn color="blue-darken-1" variant="text" @click="closeDialog">
+                Save
+            </v-btn>
+        </v-card-actions>
+    </v-card>
 </template>
 <script>
 export default {
-
+    props: ['dialog'],
+    methods: {
+        closeDialog() {
+            this.$emit('close-dialog');
+        }
+    }
 }
 </script>
 <style ></style>
