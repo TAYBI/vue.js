@@ -1,43 +1,32 @@
-<template lang="">
-    <v-card v-for="(course, index) in courses" 
-    class="mx-auto"
-    max-width="344"
-    :key="index"
-    >
-    <v-img
-      :src="course.imageLink"
-      height="200px"
-      cover
-    ></v-img>
+<template >
+  <v-container>
+    <v-row no-gutters>
+      <v-col v-if="courses.length > 0" v-for="(course, index) in courses" :key="index">
+        <CourseCard :course="course" />
+      </v-col>
+      <v-main v-else class="d-flex align-center justify-center">
+        Loaging..
+      </v-main>
+      <v-responsive width="100%"></v-responsive>
 
-    <v-card-title>
-      {{course.title}}
-    </v-card-title>
-
-    <v-card-subtitle>
-      {{course.category}}
-    </v-card-subtitle>
-
-    <v-card-text>{{course.description}}</v-card-text>
-    <v-card-actions>
-        <v-btn>details</v-btn>
-    </v-card-actions>
-    </v-card>
+    </v-row>
+  </v-container>
 </template>
 <script>
-import getCourse from '../composables/courses/getCourses.js'
-
+import getCourses from '../composables/courses/getCourses.js'
+import CourseCard from '@/components/CourseCard.vue';
 export default {
-    setup() {
+  components: {
+    CourseCard
+  },
+  setup() {
 
-        const { courses, load, error } = getCourse();
+    const { courses, load, error } = getCourses();
 
-        load();
+    load();
 
-        return { courses }
-    }
+    return { courses }
+  }
 }
 </script>
-<style lang="">
-    
-</style>
+<style ></style>

@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { db } from '../../firebase/config'
 
-const getCourse = () => {
+const getCourses = () => {
     const courses = ref([]);
     const error = ref(null);
 
@@ -20,4 +20,4 @@ const getCourse = () => {
     return { load, courses, error }
 }
 
-export default getCourse;
+export default getCourses;
