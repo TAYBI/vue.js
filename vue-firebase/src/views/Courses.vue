@@ -4,9 +4,12 @@
       <v-col v-if="courses.length > 0" v-for="(course, index) in courses" :key="index">
         <CourseCard :course="course" />
       </v-col>
-      <v-main v-else class="d-flex align-center justify-center">
-        Loaging..
-      </v-main>
+      <v-row v-else justify="space-around">
+        <v-col cols="auto">
+          <v-btn :loading="true" variant="text">
+          </v-btn>
+        </v-col>
+      </v-row>
       <v-responsive width="100%"></v-responsive>
 
     </v-row>

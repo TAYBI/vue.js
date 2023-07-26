@@ -1,5 +1,9 @@
 <template>
-  <h1>Home</h1>
+  <v-row justify="space-around">
+    <v-col cols="auto">
+      <h1>Home</h1>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
