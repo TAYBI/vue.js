@@ -4,20 +4,16 @@
     <!-- <button @click="saySalam">Salam</button> -->
     <!-- <input v-model="search" type="text">
     <P v-for="course in searchResult">{{ course }}</P> -->
-    <Courses />
   </div>
 </template>
 
 <script>
 import { computed, reactive, ref, watch, watchPostEffect } from 'vue';
-import Courses from './Courses.vue';
 
 
 export default {
   name: 'HomeView',
-  components: {
-    Courses
-  },
+
   setup() {
     //data
     let text = reactive({ text: "Home" })
