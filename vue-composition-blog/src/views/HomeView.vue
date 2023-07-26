@@ -1,24 +1,30 @@
 <template>
   <div class="home">
-    <h1>Home - {{ text }}</h1>
+    <h1 ref="header">{{ text }}</h1>
     <button @click="saySalam">Salam</button>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 
 export default {
   name: 'HomeView',
   setup() {
     //data
-    let text = "Home"
+    let text = ref("Home")
+
+    let header = ref(null);
+
 
     //Methods
-
     const saySalam = () => {
-      console.log('Bdina haja akhra');
+      // header.value.textContent = 'changed'
+      text.value = "second home"
+      console.log(text);
     }
-    return { text, saySalam }
+    return { text, saySalam, header }
   }
 }
 </script>
