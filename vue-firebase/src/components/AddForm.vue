@@ -7,16 +7,16 @@
             <v-container>
                 <v-row>
                     <v-col cols="12" sm="6" md="4">
-                        <v-text-field label="Title*" required></v-text-field>
+                        <v-text-field v-model="course.title" label="Title*" required></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                        <v-text-field label="Category*" required></v-text-field>
+                        <v-text-field v-model="course.category" label="Category*" required></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="12" md="4">
-                        <v-textarea label="Description"></v-textarea>
+                        <v-textarea v-model="course.description" label="Description"></v-textarea>
                     </v-col>
                     <v-col cols="12" sm="6">
-                        <v-autocomplete :items="[
+                        <v-autocomplete v-model="course.tags" :items="[
                             'Python',
                             'JavaScript',
                             'Java',
@@ -28,6 +28,10 @@
                             'Swift',
                             'SQL']" label="Interests" multiple></v-autocomplete>
                     </v-col>
+                    <v-radio-group v-model="course.typePayment" inline>
+                        <v-radio label="Free" v-model="course.typePayment" value="free" checked></v-radio>
+                        <v-radio label="Paying" v-model="course.typePayment" value="paying"></v-radio>
+                    </v-radio-group>
                 </v-row>
             </v-container>
             <small>*indicates required field</small>
@@ -37,20 +41,42 @@
             <v-btn color="blue-darken-1" variant="text" @click="closeDialog">
                 Close
             </v-btn>
-            <v-btn color="blue-darken-1" variant="text" @click="closeDialog">
+            <v-btn color="blue-darken-1" variant="text" @click="addCourse_">
                 Save
             </v-btn>
         </v-card-actions>
     </v-card>
 </template>
 <script>
+import addCourse from '@/composables/courses/addCourse';
+import { reactive } from 'vue';
+
 export default {
     props: ['dialog'],
-    methods: {
-        closeDialog() {
-            this.$emit('close-dialog');
+
+    setup(props, { emit }) {
+        const { load, error } = addCourse();
+        const course = reactive({
+            category: "",
+            description: "",
+            imageLink: "https://picsum.photos/200/100",
+            tags: [],
+            title: "",
+            typePayment: "free",
+        })
+
+        const closeDialog = () => {
+            emit('closeDialog');
         }
-    }
+
+        const addCourse_ = () => {
+            load(course);
+            emit('closeDialog');
+        }
+
+        return { addCourse_, closeDialog, course }
+
+    },
 }
 </script>
 <style ></style>
