@@ -7,10 +7,11 @@ const getCourses = () => {
 
     const load = async () => {
         try {
-            const res = await db.collection('courses').get();
-            courses.value = res.docs.map(doc => {
-                return { ...doc.data(), id: doc.id }
-            })
+            await db.collection('courses').onSnapshot(snap => {
+                courses.value = snap.docs.map(doc => {
+                    return { ...doc.data(), id: doc.id }
+                })
+            });
         } catch (err) {
             error.value = err.message;
         }
