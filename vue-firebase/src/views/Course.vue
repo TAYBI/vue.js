@@ -10,23 +10,32 @@
             <h4 class="subheading">
                 {{ course.category }}
             </h4>
+            <v-btn @click="delCourse" icon="mdi-delete-forever" class="bg-red-darken-4" variant="tonal">
+
+            </v-btn>
         </div>
     </v-parallax>
 </template>
 <script>
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import getCourse from '@/composables/courses/getCourse';
+import deleteCourse from '@/composables/courses/deleteCourse';
 
 export default {
     setup() {
         const route = useRoute()
+        const router = useRouter();
+        const { course, load, error } = getCourse();
+        const deleteC = deleteCourse().deleteC;
         const id = route.params.id
 
-        const { course, load, error } = getCourse();
+        load(id)
+        const delCourse = () => {
+            deleteC(id);
+            router.push({ name: 'courses' })
+        }
 
-        console.log(load(id));
-        return { course, error }
+        return { course, error, delCourse }
     }
 }
 </script>
-<style ></style>
